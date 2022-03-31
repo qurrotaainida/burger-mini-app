@@ -1,9 +1,11 @@
 import React from 'react'
 
+import style from './burger.module.css'
+
 const Lettuce = () => {
   return (
-    <div>Lettuce</div>
+    <div className={style.lettuce }></div>
   )
 }
 
-export default Lettuce
+export default Lettuce 

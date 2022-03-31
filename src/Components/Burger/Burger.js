@@ -6,17 +6,30 @@ import Lettuce from './Lettuce'
 import Cheese from './Cheese'
 import Tomato from './Tomato'
 
-const Burger = () => {
+import style from './burger.module.css'
+
+const Burger = (props) => {
+
 
     return (
-        <>
+        <div className={style.burger}>
+            <Bun type='top'/>
+            {props.ingredients.map( (item, index) => {
+                switch(item){
+                    case 'patty':
+                        return <Patty key={index} />
+                     case 'lettuce':
+                        return <Lettuce key={index} />
+                    case 'bun':
+                        return <Bun type="insert" key={index} />
+                    case 'cheese':
+                        return <Cheese key={index} /> 
+                    case 'tomato':
+                        return <Tomato key={index} />   
+                }
+            })}
             <Bun />
-            <Patty />
-            <Lettuce />
-            <Cheese />
-            <Tomato />
-            <Bun />
-        </>
+        </div>
     )
 
 }
