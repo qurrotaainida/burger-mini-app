@@ -7,12 +7,12 @@ import BurgerMaker from './Pages/BurgerMaker'
 
 function App() {
   return (
-    <>
+    <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/burger-maker" element={<BurgerMaker />} />
       </Routes>
-    </>
+      </Layout>
   );
 }
 
