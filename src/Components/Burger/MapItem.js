@@ -1,7 +1,8 @@
 import React from 'react'
-import { BiMinusCircle, BiChevronDownCircle, BiChevronUpCircle } from 'react-icons/bi'
-import style from './controller.module.css'
+// instal icon dengan 'npm i react-icons'
+import { BiMinusCircle, BiChevronUpCircle, BiChevronDownCircle } from 'react-icons/bi'
 
+import style from './controller.module.css'
 const MapItem = (props) => {
   return (
     <div className={style.map_item}>

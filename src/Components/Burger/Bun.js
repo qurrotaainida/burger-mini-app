@@ -22,21 +22,8 @@ const Bun = (props) => {
   }
 
   return (
-    // a. Default styling (melalui CSS)
-    // <div className={`${style.bun} ${bunClass}`}></div>
-
-    // b. Inline class styling
-    // <div className={`${style.bun} ${bunClass}`} style={{ paddingLeft: '0px' }}></div>
-
-    // c. Styled components
-    // (Install dulu dengan npm install styled-components)
-
+  
     <div className={`${style.bun} ${bunClass}`}>
-      {/* <button> */}
-      {/* <StyledButton>
-        Button
-      </StyledButton> */}
-      {/* </button> */}
     </div>
   )
 }

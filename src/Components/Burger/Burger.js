@@ -1,41 +1,42 @@
-import React, { useState } from 'react'
-import Bun from './Bun';
-import Tomato from './Tomato';
-import Patty from './Patty';
-import Cheese from './Cheese';
-import Lettuce from './Lettuce';
+import React, { useContext } from 'react'
+import BurgerContext from '../../Context/BurgerContext'
+
+import Bun from './Bun'
+import Patty from './Patty'
+import Lettuce from './Lettuce'
+import Cheese from './Cheese'
+import Tomato from './Tomato'
+
 import style from './burger.module.css'
 
-const Burger = (props) => {
+const Burger = () => {
 
-    // const ingredients = ['patty', 'lettuce', 'bun', 'tomato', 'cheese'];
-    // const ingredients = ['patty', 'patty', 'patty', 'patty', 'patty'];
-    // const ingredients = ['patty', 'cheese', 'lettuce', 'tomato', 'patty', 'bun', 'patty', 'cheese', 'lettuce', 'tomato', 'patty'];
+    const ctx = useContext(BurgerContext)
 
-    // Urutan burger mengikuti index dari array ingredients diatas
+    console.log(ctx)
 
-    return (
-        <div className={style.burger}>
-            <Bun type="top"/>   {/* type adalah props dan top adalah valuenya */}
-            {props.ingredients.map( (item,index) => {
+    return ( 
+        <div className={style.burger} >
+            <Bun type="top" />
+            {ctx.ingredients.map( (item, index) => {
                 switch (item) {
-                    case 'patty':
-                        return <Patty key={index}/>
-                    case 'lettuce':
-                        return <Lettuce key={index}/>
-                    case 'bun':
-                        return <Bun type="insert" key={index}/>
-                    case 'cheese':
-                        return <Cheese key={index}/>
-                    case 'tomato':
-                        return <Tomato key={index}/>
+                    case 'patty' :
+                        return <Patty key={index} />
+                    case 'lettuce' :
+                        return <Lettuce key={index} />
+                    case 'bun' :
+                        return <Bun type="insert" key={index} />
+                    case 'cheese' :
+                        return <Cheese key={index} />
+                    case 'tomato' :
+                        return <Tomato key={index} />
                     default:
-                        return null;
+                        return null
                 }
             })}
-            <Bun/>
-        </div>
+            <Bun />
+        </div>    
     )
 }
 
-export default Burger;
+export default Burger
